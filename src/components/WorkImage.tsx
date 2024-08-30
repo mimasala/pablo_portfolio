@@ -25,6 +25,7 @@ const WorkImage: React.FC<workCardProps> = ({ title, description, img, darken })
     height: '100%',
     objectFit: 'cover' as const, // ensures the image covers the entire area without distorting
   };
+
   return (<>
 
     <motion.div
@@ -46,7 +47,7 @@ const WorkImage: React.FC<workCardProps> = ({ title, description, img, darken })
             className={cn("font-bold text-6xl text-wrap mb-4", darken ? "text-black" : "text-white")}
             variants={titleVariant}
           >
-            {title}
+            {title.toUpperCase()}
           </motion.div>
 
           <motion.div
