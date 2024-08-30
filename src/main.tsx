@@ -7,7 +7,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import About from './pages/About.tsx';
-import NavBar from './components/NavBar.tsx';
 import InstagramStory from './pages/work/InstagramStory.tsx';
 import Swimlane from './pages/work/Swimlane.tsx';
 
