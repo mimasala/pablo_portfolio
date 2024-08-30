@@ -1,4 +1,3 @@
-import React from 'react'
 import WorkContentContainer from '../../components/WorkContentContainer'
 import insta1 from '../../../public/work/insta-1.png'
 import insta2 from '../../../public/work/insta-2.png'

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { usePopper } from 'react-popper';
 import { cn } from '../utils';

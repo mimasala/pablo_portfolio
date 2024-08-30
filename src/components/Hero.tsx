@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import pablo from '../../public/pablo.png';
 import pabloFractured from '../../public/pablo_fractured.png';

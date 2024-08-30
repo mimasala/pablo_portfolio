@@ -1,4 +1,3 @@
-import React from 'react'
 import NavBar from '../components/NavBar'
 import pablo from '../../public/work/pablo_about_me.png'
 
