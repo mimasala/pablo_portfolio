@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import PageIsLoading from './pages/feedback/PageIsLoading.tsx';
 import { motion } from 'framer-motion';
 import usePageState from './globalStates.ts';
+import { cn } from './utils.ts';
 
 function App() {
   const { isPageLoaded, setPageLoaded } = usePageState();
@@ -51,20 +52,19 @@ function App() {
 
     const images = Array.from(document.images).filter(img => !img.complete);
 
-    if (images.length === 0) {
-      onPageLoad(); // Call if there are no images to wait for
-    } else {
+    if (images.length !== 0) {
       Promise.all(images.map(img => new Promise(resolve => {
         img.onload = img.onerror = resolve;
-      }))).then(onPageLoad);
+      }))).then(() => onPageLoad());
     }
   }, [setPageLoaded]);
 
   return (
     <>
-      {isPageLoaded ? (
+      <div className={cn(isPageLoaded ? "" : "hidden")}>
         <RouterProvider router={router} />
-      ) : (
+      </div>
+      {isPageLoaded ??
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: fadeOut ? 0 : 1 }}
@@ -73,7 +73,7 @@ function App() {
         >
           <PageIsLoading />
         </motion.div>
-      )}
+      }
     </>
   );
 }
