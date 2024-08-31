@@ -43,6 +43,7 @@ const WorkCard: React.FC<workCardProps> = ({ title, img, darken, href }) => {
         initial="initial"
         animate="initial"
         whileHover="animate"
+        whileTap="animate"
         onClick={() => href ? navigate(href) : null}
       >
         <div className='relative' style={{ width: '100%', height: '100%' }}>

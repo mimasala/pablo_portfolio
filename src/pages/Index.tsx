@@ -20,8 +20,7 @@ const Index = () => {
       <Hero />
       <div className='m-8'>
         <h1
-          style={{ width: 1200 }}
-          className='text-2xl lg:text-9xl font-bold'>SCHAUE DIR MEINE ARBEITEN AN!</h1>
+          className='text-2xl lg:text-9xl lg:w-[1200px] font-bold text-wrap'>SCHAUE DIR MEINE ARBEITEN AN!</h1>
       </div>
       <div className='flex space-x-5 scroll-mr-96 overflow-x-scroll my-8 no-scrollbar'>
         <div className='xl:ml-[30vw]'></div>
