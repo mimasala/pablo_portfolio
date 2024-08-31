@@ -41,30 +41,30 @@ function App() {
     },
   ]);
 
-  useEffect(() => {
-    const onPageLoad = () => {
-      setFadeOut(true);
-      setTimeout(() => {
-        setPageLoaded(true);
-        console.log('page loaded');
-      }, 500); // duration of fade-out
-    };
-
-    const images = Array.from(document.images).filter(img => !img.complete);
-
-    if (images.length !== 0) {
-      Promise.all(images.map(img => new Promise(resolve => {
-        img.onload = img.onerror = resolve;
-      }))).then(() => onPageLoad());
-    }
-  }, [setPageLoaded]);
+  const onPageLoad = () => {
+    setFadeOut(true);
+    setTimeout(() => {
+      setPageLoaded(true);
+      console.log('page loaded');
+    }, 500); // duration of fade-out
+  };
+  if (!isPageLoaded) {
+    Promise.all(Array.from(document.images).map(img => {
+      if (img.complete)
+        return Promise.resolve(img.naturalHeight !== 0);
+      return new Promise(resolve => {
+        img.addEventListener('load', () => resolve(true));
+        img.addEventListener('error', () => resolve(false));
+      });
+    })).then(results => {
+      console.log("wow");
+      onPageLoad()
+    });
+  }
 
   return (
     <>
-      <div className={cn(isPageLoaded ? "" : "hidden")}>
-        <RouterProvider router={router} />
-      </div>
-      {isPageLoaded ??
+      {!(isPageLoaded) ??
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: fadeOut ? 0 : 1 }}
@@ -74,6 +74,9 @@ function App() {
           <PageIsLoading />
         </motion.div>
       }
+      <div className={cn(isPageLoaded ? "" : "hidden")}>
+        <RouterProvider router={router} />
+      </div>
     </>
   );
 }

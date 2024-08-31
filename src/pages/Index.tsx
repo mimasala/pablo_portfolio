@@ -25,8 +25,8 @@ const Index = () => {
       </div>
       <div className='flex space-x-5 scroll-mr-96 overflow-x-scroll my-8 no-scrollbar'>
         <div className='xl:ml-[30vw]'></div>
-        {workCards.map(card => {
-          return (<WorkCard title={card.title} img={card.img} darken={card.darken} href={card.href}></WorkCard>)
+        {workCards.map((card, index) => {
+          return (<div key={index}><WorkCard title={card.title} img={card.img} darken={card.darken} href={card.href}></WorkCard></div>)
         })}
       </div>
     </div>
