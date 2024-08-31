@@ -14,8 +14,8 @@ import { motion } from 'framer-motion';
 import usePageState from './globalStates.ts';
 
 function App() {
-  const { isPageLoaded, setPageLoaded } = usePageState()
-  const [fadeOut, setFadeOut] = useState<boolean>(false);
+  const { isPageLoaded, setPageLoaded } = usePageState();
+  const [fadeOut, setFadeOut] = useState(false);
 
   const router = createBrowserRouter([
     {
@@ -24,19 +24,19 @@ function App() {
     },
     {
       path: "/about",
-      element: <About></About>
+      element: <About />,
     },
     {
       path: "/work/instagram-story",
-      element: <InstagramStory />
+      element: <InstagramStory />,
     },
     {
       path: "/work/swimlane",
-      element: <Swimlane />
+      element: <Swimlane />,
     },
     {
       path: "/work/befragungstool",
-      element: <Befragungstool />
+      element: <Befragungstool />,
     },
   ]);
 
@@ -49,18 +49,16 @@ function App() {
       }, 500); // duration of fade-out
     };
 
-    Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
-      console.log(Array.from(document.images));
-      if (!(document.images.length >= 0))
-        onPageLoad()
-    });
-    // if (document.readyState === 'complete') {
-    //   onPageLoad();
-    // } else {
-    //   window.addEventListener('load', onPageLoad, false);
-    //   return () => window.removeEventListener('load', onPageLoad);
-    // }
-  }, []);
+    const images = Array.from(document.images).filter(img => !img.complete);
+
+    if (images.length === 0) {
+      onPageLoad(); // Call if there are no images to wait for
+    } else {
+      Promise.all(images.map(img => new Promise(resolve => {
+        img.onload = img.onerror = resolve;
+      }))).then(onPageLoad);
+    }
+  }, [setPageLoaded]);
 
   return (
     <>
@@ -70,7 +68,7 @@ function App() {
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: fadeOut ? 0 : 1 }}
-          transition={{ duration: 0.5 }} // same duration as setTimeout above
+          transition={{ duration: 0.5 }}
           className="absolute inset-0 flex items-center justify-center bg-white"
         >
           <PageIsLoading />
