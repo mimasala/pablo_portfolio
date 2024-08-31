@@ -49,12 +49,15 @@ function App() {
       }, 500); // duration of fade-out
     };
 
-    if (document.readyState === 'complete') {
-      onPageLoad();
-    } else {
-      window.addEventListener('load', onPageLoad, false);
-      return () => window.removeEventListener('load', onPageLoad);
-    }
+    Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+      onPageLoad()
+    });
+    // if (document.readyState === 'complete') {
+    //   onPageLoad();
+    // } else {
+    //   window.addEventListener('load', onPageLoad, false);
+    //   return () => window.removeEventListener('load', onPageLoad);
+    // }
   }, []);
 
   return (
