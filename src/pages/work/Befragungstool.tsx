@@ -4,12 +4,13 @@ import two from "../../../public/work/html_css-2.avif";
 import three from "../../../public/work/html_css-3.avif";
 import four from "../../../public/work/html_css-finale-version.avif";
 import WorkImage from "../../components/WorkImage";
+import ProContra from "../../components/ProContra";
 
 const Befragungstool = () => {
   return (
     <>
       <WorkContentContainer>
-        <h1 className="text-9xl font-bold">BEFRAGUNGS TOOL</h1>
+        <h1 className="text-3xl lg:text-9xl font-bold">BEFRAGUNGS TOOL</h1>
         <br />
         <br />
         <h1 className="text-xl font-bold">
@@ -55,22 +56,10 @@ const Befragungstool = () => {
         <p>Finale Version</p>
         <img src={four} alt="final version" />
         <br />
-        <h1 className="text-9xl font-bold">PRO / CONTRA</h1>
-        <br />
-        <div className="flex space-x-16">
-          <div className="w-2/5">
-            <h1 className="text-xl">Das lief besonders gut.</h1>
-            <p>
-              Nicht aufgeben.
-            </p>
-          </div>
-          <div className="w-2/5">
-            <h1 className="text-xl">Hier habe ich noch Potenzial</h1>
-            <p>
-              Der Auftrag war mir schon früh nicht sympathisch, aber weil ich ohne Begeisterung hereinging, was mich so die ganze Arbeitsdauer verfolgte, dass ich weniger Spass daran hatte als an anderen Aufträgen. Ich war oft der Meinung, ich kam nicht wirklich voran, weil ich mir keine Mühe in diesem Auftrag gab. Irgendwann habe ich realisiert, dass man nicht immer einen Auftrag, bei dem man Spass hat, macht, sondern es auch einfach Aufträge gibt, die man Halt machen und dort durch muss. Ebenfalls war ich manchmal kurz vor der Verzweiflung, da Alchemer meiner Meinung nach kein gutes Programm ist.
-            </p>
-          </div>
-        </div>
+        <ProContra
+          pro={<>Nicht aufgeben.</>}
+          contra={<>Der Auftrag war mir schon früh nicht sympathisch, aber weil ich ohne Begeisterung hereinging, was mich so die ganze Arbeitsdauer verfolgte, dass ich weniger Spass daran hatte als an anderen Aufträgen. Ich war oft der Meinung, ich kam nicht wirklich voran, weil ich mir keine Mühe in diesem Auftrag gab. Irgendwann habe ich realisiert, dass man nicht immer einen Auftrag, bei dem man Spass hat, macht, sondern es auch einfach Aufträge gibt, die man Halt machen und dort durch muss. Ebenfalls war ich manchmal kurz vor der Verzweiflung, da Alchemer meiner Meinung nach kein gutes Programm ist.</>}
+        ></ProContra>
       </WorkContentContainer>
     </>
   );
