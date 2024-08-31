@@ -45,7 +45,7 @@ function App() {
     setFadeOut(true);
     setTimeout(() => {
       setPageLoaded(true);
-      console.log('page loaded');
+      console.log(Array.from(document.images));
     }, 500); // duration of fade-out
   };
   if (!isPageLoaded) {
@@ -57,14 +57,15 @@ function App() {
         img.addEventListener('error', () => resolve(false));
       });
     })).then(results => {
-      console.log(results);
-      onPageLoad()
+      if (results.every(res => res)) {
+        onPageLoad()
+      }
     });
   }
 
   return (
     <>
-      {!(isPageLoaded) ??
+      {!isPageLoaded && (
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: fadeOut ? 0 : 1 }}
@@ -73,7 +74,7 @@ function App() {
         >
           <PageIsLoading />
         </motion.div>
-      }
+      )}
       <div className={cn(isPageLoaded ? "" : "hidden")}>
         <RouterProvider router={router} />
       </div>
