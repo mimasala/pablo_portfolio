@@ -8,7 +8,7 @@ import InstagramStory from './pages/work/InstagramStory.tsx';
 import Swimlane from './pages/work/Swimlane.tsx';
 import Befragungstool from './pages/work/Befragungstool.tsx';
 import Index from './pages/Index';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PageIsLoading from './pages/feedback/PageIsLoading.tsx';
 import { motion } from 'framer-motion';
 import usePageState from './globalStates.ts';
@@ -46,22 +46,13 @@ function App() {
     setTimeout(() => {
       setPageLoaded(true);
       console.log(Array.from(document.images));
-    }, 500); // duration of fade-out
+    }, 500);
   };
-  if (!isPageLoaded) {
-    Promise.all(Array.from(document.images).map(img => {
-      if (img.complete)
-        return Promise.resolve(img.naturalHeight !== 0);
-      return new Promise(resolve => {
-        img.addEventListener('load', () => resolve(true));
-        img.addEventListener('error', () => resolve(false));
-      });
-    })).then(results => {
-      if (results.every(res => res)) {
-        onPageLoad()
-      }
-    });
-  }
+
+  useEffect(() => {
+    const images = Array.from(document.images)
+    console.log(images.map(x => x.complete));
+  }, [])
 
   return (
     <>
