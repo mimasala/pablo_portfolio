@@ -4,14 +4,14 @@ import WorkCard, { workCardProps } from '../components/WorkCard'
 import insta from '../../public/work/insta_title_picture.png';
 import swimlane from '../../public/work/swimlane_black-and-white.png'
 import befragungstool from '../../public/work/html_css-2.png'
-import mascot from '../../public/work/mascot.png'
+// import mascot from '../../public/work/mascot.png'
 
 const Index = () => {
   const workCards: workCardProps[] = [
     { title: "INSTAGRAM STORY", img: insta, href: "/work/instagram-story" },
     { title: "SWIMLANE", img: swimlane, href: "/work/swimlane" },
     { title: "BEFRAGUNGS- TOOL", img: befragungstool, darken: true, href: "/work/befragungstool" },
-    { title: "MASCOT", img: mascot, href: "/work/mascot" },
+    // { title: "MASCOT", img: mascot, href: "/work/mascot" },
   ]
 
   return (

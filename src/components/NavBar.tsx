@@ -10,7 +10,7 @@ const NavBar = () => {
           { text: "INSTAGRAM STORY", href: "/work/instagram-story" },
           { text: "SWIMLANE", href: "/work/swimlane" },
           { text: "BEFRAGUNGSTOOL", href: "/work/befragungstool" },
-          { text: "MASCOT", href: "/work/mascot" },
+          // { text: "MASCOT", href: "/work/mascot" },
         ]} text="WORK" />
         <NavButton href="/about" text="ABOUT" />
         <div></div>
