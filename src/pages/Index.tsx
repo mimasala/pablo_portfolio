@@ -1,10 +1,10 @@
 import Hero from '../components/Hero'
 import NavBar from '../components/NavBar'
 import WorkCard, { workCardProps } from '../components/WorkCard'
-import insta from '../../public/work/insta_title_picture.png';
-import swimlane from '../../public/work/swimlane_black-and-white.png'
-import befragungstool from '../../public/work/html_css-2.png'
-// import mascot from '../../public/work/mascot.png'
+import insta from '../../public/work/insta_title_picture.avif';
+import swimlane from '../../public/work/swimlane_black-and-white.avif'
+import befragungstool from '../../public/work/html_css-2.avif'
+// import mascot from '../../public/work/mascot.avif'
 
 const Index = () => {
   const workCards: workCardProps[] = [

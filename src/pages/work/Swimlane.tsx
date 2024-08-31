@@ -1,9 +1,9 @@
 import WorkImage from '../../components/WorkImage';
 import WorkContentContainer from '../../components/WorkContentContainer';
-import swimlane1 from '../../../public/work/swimlane.png';
-import swimlane2 from '../../../public/work/swimlane_black-and-white.png';
-import swimlane3 from '../../../public/work/swimlane_cut.png';
-import swimlane4 from '../../../public/work/swimlane_final_page.png';
+import swimlane1 from '../../../public/work/swimlane.avif';
+import swimlane2 from '../../../public/work/swimlane_black-and-white.avif';
+import swimlane3 from '../../../public/work/swimlane_cut.avif';
+import swimlane4 from '../../../public/work/swimlane_final_page.avif';
 
 const Swimlane = () => {
   return (

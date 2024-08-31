@@ -1,8 +1,8 @@
 import WorkContentContainer from "../../components/WorkContentContainer";
-import one from "../../../public/work/html_css-1.png";
-import two from "../../../public/work/html_css-2.png";
-import three from "../../../public/work/html_css-3.png";
-import four from "../../../public/work/html_css-finale-version.png";
+import one from "../../../public/work/html_css-1.avif";
+import two from "../../../public/work/html_css-2.avif";
+import three from "../../../public/work/html_css-3.avif";
+import four from "../../../public/work/html_css-finale-version.avif";
 import WorkImage from "../../components/WorkImage";
 
 const Befragungstool = () => {

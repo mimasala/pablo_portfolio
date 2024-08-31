@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import pablo from '../../public/pablo.png';
-import pabloFractured from '../../public/pablo_fractured.png';
+import pablo from '../../public/pablo.avif';
+import pabloFractured from '../../public/pablo_fractured.avif';
 
 const Hero = () => {
   const titleVariant = {

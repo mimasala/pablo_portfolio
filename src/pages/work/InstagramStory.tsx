@@ -1,9 +1,9 @@
 import WorkContentContainer from '../../components/WorkContentContainer'
-import insta1 from '../../../public/work/insta-1.png'
-import insta2 from '../../../public/work/insta-2.png'
-import insta3 from '../../../public/work/insta-3.png'
-import insta4 from '../../../public/work/insta-4.png'
-import insta5 from '../../../public/work/insta-5.png'
+import insta1 from '../../../public/work/insta-1.avif'
+import insta2 from '../../../public/work/insta-2.avif'
+import insta3 from '../../../public/work/insta-3.avif'
+import insta4 from '../../../public/work/insta-4.avif'
+import insta5 from '../../../public/work/insta-5.avif'
 import WorkImage from '../../components/WorkImage'
 
 const InstagramStory = () => {
