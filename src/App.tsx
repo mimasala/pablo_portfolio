@@ -8,7 +8,7 @@ import InstagramStory from './pages/work/InstagramStory.tsx';
 import Swimlane from './pages/work/Swimlane.tsx';
 import Befragungstool from './pages/work/Befragungstool.tsx';
 import Index from './pages/Index';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import PageIsLoading from './pages/feedback/PageIsLoading.tsx';
 import { motion } from 'framer-motion';
 import usePageState from './globalStates.ts';
@@ -57,7 +57,7 @@ function App() {
         img.addEventListener('error', () => resolve(false));
       });
     })).then(results => {
-      console.log("wow");
+      console.log(results);
       onPageLoad()
     });
   }
