@@ -50,7 +50,9 @@ function App() {
     };
 
     Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
-      onPageLoad()
+      console.log(Array.from(document.images));
+      if (!(document.images.length >= 0))
+        onPageLoad()
     });
     // if (document.readyState === 'complete') {
     //   onPageLoad();
