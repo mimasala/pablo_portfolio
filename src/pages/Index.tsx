@@ -15,13 +15,13 @@ const Index = () => {
   ]
 
   return (
-    <div className='overflow-x-hidden'>
+    <div className='overflow-x-hidden sm:overflow-x-auto'>
       <NavBar />
       <Hero />
       <div className='m-8'>
         <h1
           style={{ width: 1200 }}
-          className='text-9xl font-bold'>SCHAUE DIR MEINE ARBEITEN AN!</h1>
+          className='text-2xl lg:text-9xl font-bold'>SCHAUE DIR MEINE ARBEITEN AN!</h1>
       </div>
       <div className='flex space-x-5 scroll-mr-96 overflow-x-scroll my-8 no-scrollbar'>
         <div className='xl:ml-[30vw]'></div>

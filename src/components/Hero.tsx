@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <div className='flex pt-20 overflow-x-hidden justify-center'>
-      <div className='max-w-min'>
+      <div className='max-w-min hidden lg:block'>
         <motion.div
           style={{ width: 940 }}
           initial="initial"
@@ -53,6 +53,37 @@ const Hero = () => {
               variants={pabloFracturedVariant}
               className='absolute'
               style={{ height: "1000px" }}
+              src={pabloFractured}
+              alt="Pablo's Space fractured illustration"
+            />
+          </div>
+        </motion.div>
+      </div>
+      <div className='max-w-min lg:hidden'>
+        <motion.div
+          className='w-full px-8'
+          initial="initial"
+          animate="animate"
+          transition={{ repeat: Infinity, repeatType: "mirror", repeatDelay: 1 }}
+        >
+          <motion.div
+            className='flex justify-center'
+            variants={titleVariant}
+          >
+            <h1 className='text-3xl font-bold'>PABLO’S SPACE</h1>
+          </motion.div>
+          <div
+            style={{
+              height: "500px",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <motion.img
+              variants={pabloFracturedVariant}
+              className='absolute'
+              style={{ height: "500px" }}
               src={pabloFractured}
               alt="Pablo's Space fractured illustration"
             />
