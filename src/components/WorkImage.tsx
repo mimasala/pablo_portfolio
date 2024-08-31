@@ -32,6 +32,7 @@ const WorkImage: React.FC<workCardProps> = ({ title, description, image, darken 
       initial="initial"
       animate="initial"
       whileHover="animate"
+      whileDrag="animate"
       whileTap="animate"
     >
       <div className='relative' style={{ width: '100%', height: '100%' }}>
