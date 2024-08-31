@@ -5,11 +5,13 @@ import insta3 from '../../../public/work/insta-3.avif'
 import insta4 from '../../../public/work/insta-4.avif'
 import insta5 from '../../../public/work/insta-5.avif'
 import WorkImage from '../../components/WorkImage'
+import ProContra from '../../components/ProContra'
+import ThreeColumnText from '../../components/ThreeColumnText'
 
 const InstagramStory = () => {
   return (<>
     <WorkContentContainer>
-      <h1 className='text-9xl font-bold'>INSTAGRAM STORY</h1>
+      <h1 className='text-3xl lg:text-9xl font-bold'>INSTAGRAM STORY</h1>
       <br />
       <br />
       <h1 className='text-xl font-bold '>Guidelines und Vorlagen zur Gestaltung von Instagram Stories für den SRF Dachmarkenkanal</h1>
@@ -38,36 +40,25 @@ const InstagramStory = () => {
       <div className='p-1.5'>
         <img className='my-4' src={insta4} />
       </div>
-      <div className='flex flex-grow space-x-5'>
-        <p className='w-1/3'>
-          <h1 className='text-xl'>Textstyling auf Bild</h1>
+      <ThreeColumnText
+        one={<>
           Headlines schreiben wir Grossklein, Linksbündig und mir roter Hinterlegung. Der Copytext wird mit dem Schriftschnitt Regular in Dunkelgrau gesetzt. Dazu kommen noch die hervorgehobenen Wörter, welche wir immer Rot machen mit dem Schriftschnitt Heavy.
-        </p>
-        <p className='w-1/3'>
-          <h1 className='text-xl'>Textstyling auf Grafikhintergrund</h1>
+        </>}
+        two={<>
           Headlines schreiben wir Grossklein, Linksbündig und Weiss oder Rot hinterlegt (je nach Hintergrundfarbe). Der Copytext wird mit dem Schriftschnitt Regular gesetzt. Die hervorgehobenen Wörter schreiben wir mit Schriftschnitt Heavy.
-        </p>
-        <p className='w-1/3'>
-          <h1 className='text-xl'>Splitscreen mit Hintergrundfläche</h1>
+        </>}
+        three={<>
           Headlines immer Grossklein und Linksbündig mit roter oder weisser Hinterlegung (je nach Hintergrundfarbe). Headlines lagern über die Farbfläche bis zur zweiten Zeile in der Mitte. Copytext Grossklein Regular, hervorgehobenes wird mit Schriftschnitt Heavy geschrieben. Split der Hintergrundfläche möglichst immer im unteren 1/3 oder 1/2.
-        </p>
-      </div>
+        </>}
+      ></ThreeColumnText>
       <br />
       <br />
       <img src={insta5} />
       <br />
-      <h1 className='text-9xl font-bold'>PRO / CONTRA</h1>
-      <br />
-      <div className='flex space-x-16'>
-        <div className='w-2/5'>
-          <h1 className='text-xl'>Das lief besonders gut.</h1>
-          <p>Ich hatte schnell verschiedene Ideen wie das Design aussehen sollte und konnte so auch effizient verschiedene unterschiedliche Routen ausarbeiten. Da ich mich mit Photoshop schon etwas besser auskenne, war für das Programm kein Hindernis, sondern die Arbeit in Photoshop lief sehr gut.</p>
-        </div>
-        <div className='w-2/5'>
-          <h1 className='text-xl'>Hier habe ich noch Potenzial</h1>
-          <p>Da ich noch nie so wirklich Instagram-Storys so vertieft gemacht habe, fand ich nicht auf Anhieb heraus, wie ich beispielsweise die Spezifische rote Farbe von SRF auf Instagram bringe, da es auf Insta nur eine gewisse Farbpalette hat. Ebenfalls Potenzial hat bei mir die Pixel bzw. Abstände waren manchmal unterschiedlich obwohl es das gleiche Design war einfach in einer anderen Farbe.</p>
-        </div>
-      </div>
+      <ProContra
+        pro={<>Ich hatte schnell verschiedene Ideen wie das Design aussehen sollte und konnte so auch effizient verschiedene unterschiedliche Routen ausarbeiten. Da ich mich mit Photoshop schon etwas besser auskenne, war für das Programm kein Hindernis, sondern die Arbeit in Photoshop lief sehr gut.</>}
+        contra={<>Da ich noch nie so wirklich Instagram-Storys so vertieft gemacht habe, fand ich nicht auf Anhieb heraus, wie ich beispielsweise die Spezifische rote Farbe von SRF auf Instagram bringe, da es auf Insta nur eine gewisse Farbpalette hat. Ebenfalls Potenzial hat bei mir die Pixel bzw. Abstände waren manchmal unterschiedlich obwohl es das gleiche Design war einfach in einer anderen Farbe.</>}
+      ></ProContra>
     </WorkContentContainer>
   </>)
 }

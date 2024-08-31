@@ -8,6 +8,7 @@ import InstagramStory from './pages/work/InstagramStory.tsx';
 import Swimlane from './pages/work/Swimlane.tsx';
 import Befragungstool from './pages/work/Befragungstool.tsx';
 import Index from './pages/Index';
+import Footer from './components/Footer.tsx';
 
 function App() {
 

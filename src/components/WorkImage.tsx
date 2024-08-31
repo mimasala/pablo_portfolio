@@ -28,7 +28,7 @@ const WorkImage: React.FC<workCardProps> = ({ title, description, image, darken 
 
   return (<>
     <motion.div
-      className='w-full my-8'
+      className='w-full my-8 hidden lg:block'
       initial="initial"
       animate="initial"
       whileHover="animate"
@@ -58,6 +58,12 @@ const WorkImage: React.FC<workCardProps> = ({ title, description, image, darken 
         </div>
       </div>
     </motion.div>
+    <div className='lg:hidden'>
+      <hr className='my-5' />
+      <h1 className='font-bold text-3xl mb-2'>{title}</h1>
+      <h1 className='mb-2'>{description}</h1>
+      <img src={image} />
+    </div>
   </>)
 }
 

@@ -4,17 +4,19 @@ import swimlane1 from '../../../public/work/swimlane.avif';
 import swimlane2 from '../../../public/work/swimlane_black-and-white.avif';
 import swimlane3 from '../../../public/work/swimlane_cut.avif';
 import swimlane4 from '../../../public/work/swimlane_final_page.avif';
+import ProContra from '../../components/ProContra';
 
 const Swimlane = () => {
   return (
     <WorkContentContainer>
-      <h1 className="text-9xl font-bold">SWIMLANE</h1>
+      <h1 className="text-3xl lg:text-9xl font-bold">SWIMLANE</h1>
+      <br />
       <br />
       <h1 className="text-xl font-bold">
         SRF Play Swimlane gestaltung durch Bildbearbeitung auf Photoshop.
       </h1>
       <br />
-      <p>
+      <h1>
         Play SRF bietet zahlreiche Serien an, wobei unsere Eigenproduktionen oft
         mit einer Swimlane auf der Website ausgestattet sind. Für die neue Serie
         SRF Kehrseite, die ehemalige Sportlerinnen und Sportler in ihrem
@@ -23,7 +25,7 @@ const Swimlane = () => {
         machte sie schwarz-weiß, sodass die Photoshop-Dateien klare Ebenen
         hatten, um den Hintergrund leicht zu entfernen oder das Bild
         schwarz-weiß zu machen.
-      </p>
+      </h1>
       <br />
       <br />
       <p>Vorgehensweise</p>
@@ -48,28 +50,20 @@ const Swimlane = () => {
       <p>Finale Version</p>
       <img src={swimlane4} alt="Swimlane Final Page" />
       <br />
-      <h1 className="text-9xl font-bold">PRO / CONTRA</h1>
-      <br />
-      <div className="flex space-x-16">
-        <div className="w-2/5">
-          <h1 className="text-xl">Das lief besonders gut.</h1>
-          <p>
-            Dadurch, dass ich durch zufälliges Stolpern auf ein YouTube-Video das
-            korrekte Anwenden von Gradient Maps herausfand, weiss ich nun, wie
-            man ein Bild saftig Schwarz&Weiss machen kann.
-          </p>
-        </div>
-        <div className="w-2/5">
-          <h1 className="text-xl">Hier habe ich noch Potenzial</h1>
-          <p>
-            Zuerst versuchte ich die Bilder mittels KI freizustellen, jedoch sah
-            man schnell, dass die Details ausgelassen werden und man dann per
-            Brushtool nochmals darüber muss, was alles mühsam machte. Darum habe
-            ich mir Tutorials angeschaut und kam auf dieses Onionskinning, bei
-            dem man manuell aber sauber das Bild freistellt.
-          </p>
-        </div>
-      </div>
+      <ProContra
+        pro={<>
+          Dadurch, dass ich durch zufälliges Stolpern auf ein YouTube-Video das
+          korrekte Anwenden von Gradient Maps herausfand, weiss ich nun, wie
+          man ein Bild saftig Schwarz&Weiss machen kann.
+        </>}
+        contra={<>
+          Zuerst versuchte ich die Bilder mittels KI freizustellen, jedoch sah
+          man schnell, dass die Details ausgelassen werden und man dann per
+          Brushtool nochmals darüber muss, was alles mühsam machte. Darum habe
+          ich mir Tutorials angeschaut und kam auf dieses Onionskinning, bei
+          dem man manuell aber sauber das Bild freistellt.
+        </>}
+      ></ProContra>
     </WorkContentContainer>
   );
 };
