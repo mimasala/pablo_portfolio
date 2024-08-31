@@ -1,38 +1,77 @@
 import './App.css'
-import Hero from './components/Hero'
-import NavBar from './components/NavBar'
-import WorkCard, { workCardProps } from './components/WorkCard'
-import insta from '../public/work/insta_title_picture.png';
-import swimlane from '../public/work/swimlane_black-and-white.png'
-import befragungstool from '../public/work/html_css-2.png'
-import mascot from '../public/work/mascot.png'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import About from './pages/About.tsx';
+import InstagramStory from './pages/work/InstagramStory.tsx';
+import Swimlane from './pages/work/Swimlane.tsx';
+import Befragungstool from './pages/work/Befragungstool.tsx';
+import Index from './pages/Index';
+import { useEffect, useState } from 'react';
+import PageIsLoading from './pages/feedback/PageIsLoading.tsx';
+import { motion } from 'framer-motion';
 
 function App() {
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const [fadeOut, setFadeOut] = useState<boolean>(false);
 
-  const workCards: workCardProps[] = [
-    { title: "INSTAGRAM STORY", img: insta, href: "/work/instagram-story" },
-    { title: "SWIMLANE", img: swimlane, href: "/work/swimlane" },
-    { title: "BEFRAGUNGS- TOOL", img: befragungstool, darken: true, href: "/work/befragungstool" },
-    { title: "MASCOT", img: mascot, href: "/work/mascot" },
-  ]
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Index />,
+    },
+    {
+      path: "/about",
+      element: <About></About>
+    },
+    {
+      path: "/work/instagram-story",
+      element: <InstagramStory />
+    },
+    {
+      path: "/work/swimlane",
+      element: <Swimlane />
+    },
+    {
+      path: "/work/befragungstool",
+      element: <Befragungstool />
+    },
+  ]);
+
+  useEffect(() => {
+    const onPageLoad = () => {
+      setFadeOut(true);
+      setTimeout(() => {
+        setLoaded(true);
+        console.log('page loaded');
+      }, 500); // duration of fade-out
+    };
+
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad, false);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
 
   return (
-    <div className='overflow-x-hidden'>
-      <NavBar />
-      <Hero />
-      <div className='m-8'>
-        <h1
-          style={{ width: 1200 }}
-          className='text-9xl font-bold'>SCHAUE DIR MEINE ARBEITEN AN!</h1>
-      </div>
-      <div className='flex space-x-5 scroll-mr-96 overflow-x-scroll my-8 no-scrollbar'>
-        <div className='xl:ml-[30vw]'></div>
-        {workCards.map(card => {
-          return (<WorkCard title={card.title} img={card.img} darken={card.darken} href={card.href}></WorkCard>)
-        })}
-      </div>
-    </div>
-  )
+    <>
+      {loaded ? (
+        <RouterProvider router={router} />
+      ) : (
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: fadeOut ? 0 : 1 }}
+          transition={{ duration: 0.5 }} // same duration as setTimeout above
+          className="absolute inset-0 flex items-center justify-center bg-white"
+        >
+          <PageIsLoading />
+        </motion.div>
+      )}
+    </>
+  );
 }
 
-export default App
+export default App;
