@@ -11,9 +11,10 @@ import Index from './pages/Index';
 import { useEffect, useState } from 'react';
 import PageIsLoading from './pages/feedback/PageIsLoading.tsx';
 import { motion } from 'framer-motion';
+import usePageState from './globalStates.ts';
 
 function App() {
-  const [loaded, setLoaded] = useState<boolean>(false);
+  const { isPageLoaded, setPageLoaded } = usePageState()
   const [fadeOut, setFadeOut] = useState<boolean>(false);
 
   const router = createBrowserRouter([
@@ -43,7 +44,7 @@ function App() {
     const onPageLoad = () => {
       setFadeOut(true);
       setTimeout(() => {
-        setLoaded(true);
+        setPageLoaded(true);
         console.log('page loaded');
       }, 500); // duration of fade-out
     };
@@ -58,7 +59,7 @@ function App() {
 
   return (
     <>
-      {loaded ? (
+      {isPageLoaded ? (
         <RouterProvider router={router} />
       ) : (
         <motion.div
