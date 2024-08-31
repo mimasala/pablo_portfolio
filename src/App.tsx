@@ -41,13 +41,13 @@ function App() {
     },
   ]);
 
-  const onPageLoad = () => {
-    setFadeOut(true);
-    setTimeout(() => {
-      setPageLoaded(true);
-      console.log(Array.from(document.images));
-    }, 500);
-  };
+  // const onPageLoad = () => {
+  //   setFadeOut(true);
+  //   setTimeout(() => {
+  //     setPageLoaded(true);
+  //     console.log(Array.from(document.images));
+  //   }, 500);
+  // };
 
   useEffect(() => {
     const images = Array.from(document.images)
