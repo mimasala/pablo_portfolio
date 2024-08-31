@@ -30,15 +30,15 @@ const Swimlane = () => {
       <WorkImage
         title="BILD DER LANGLÄUFERIN HÄCKI"
         description="Zu Beginn hatte ich das Originalbild eines Sportmoments der Langläuferin Häcki. Für diese Swimlane war es wichtig, von den vorkommenden Sportlern jeweils ein Bild eines Sportmoments sowie ein Bild ihres heutigen Ichs gegenüberzustellen; wie das ganze aussieht, kann man unter der finalen Version sich ansehen."
-        img={swimlane1}
+        image={swimlane1}
       />
       <WorkImage
-        img={swimlane2}
+        image={swimlane2}
         title="SCHWARZ WEISS BILD DER LANGLÄUFERIN HÄCKI"
         description="Das Bildkonzept von Kehrseite waren Schwarzweisse Bilder, mittels Collage. So habe ich mittels Gradient Map dem Bild ein kräftiges schwarzweiss verliehen."
       />
       <WorkImage
-        img={swimlane3}
+        image={swimlane3}
         title="SCHWARZ WEISS BILD AUSGESCHNITTEN DER LANGLÄUFERIN"
         description="Das Bildkonzept basiert auf einer Collage für jedes Thumbnail; um diese Collage mit den Sportlern zu gestalten, musste also jedes Bild nochmals ausgeschnitten und auf Photoshop-Ebenen angelegt werden, die korrekte Beschriftung haben, sodass die Bilder schnell exportiert werden können. Das Ausschneiden ging am besten mit Onionskinning"
         darken

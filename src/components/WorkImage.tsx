@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 
 export type workCardProps = {
   title: string;
-  description: string;
-  img: any;
+  description: string | JSX.Element;
+  image: any;
   darken?: boolean | undefined
 }
 
-const WorkImage: React.FC<workCardProps> = ({ title, description, img, darken }) => {
+const WorkImage: React.FC<workCardProps> = ({ title, description, image, darken }) => {
   const imageVariant = {
     initial: { filter: "blur(0px)", transition: { duration: 0.5 } },
     animate: { filter: "blur(12px)", transition: { duration: 0.5 } }
@@ -23,13 +23,12 @@ const WorkImage: React.FC<workCardProps> = ({ title, description, img, darken })
   const imgStyle = {
     width: '100%',
     height: '100%',
-    objectFit: 'cover' as const, // ensures the image covers the entire area without distorting
+    objectFit: 'cover' as const,
   };
 
   return (<>
-
     <motion.div
-      className='w-full my-4'
+      className='w-full my-8'
       initial="initial"
       animate="initial"
       whileHover="animate"
@@ -38,7 +37,7 @@ const WorkImage: React.FC<workCardProps> = ({ title, description, img, darken })
         <motion.img
           variants={imageVariant}
           style={imgStyle}
-          src={img}
+          src={image}
           alt={title}
         />
 

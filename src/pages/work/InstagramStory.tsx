@@ -21,18 +21,18 @@ const InstagramStory = () => {
       <br />
       <p>Vorgehensweise</p>
       <WorkImage title='Recherchieren' description='Als Erstes habe ich mir Instagram-Story-Beispiele angeschaut und deren Unterschiede. Auf den ersten Blick ist mir aufgefallen, dass das Design meist pro Story unterschiedlich ist und auch fern ab vom SRF-Design ist. Somit habe ich mich durch die Guidelines und Designs von anderen SRF Instagram Accounts gestöbert, um daraus selbst das Design für diesen Account zu erstellen.'
-        img={insta1}
+        image={insta1}
       />
       <WorkImage
         title='Grafik als Hintergrund'
         description='Die Aufgabe war es, einmal die Guidelines zu erstellen, mit einem Bild als Hintergrund und das Gleiche mit Grafik als Hintergrund. In diesem Beispiel war es wichtig, dass die SRF-Farben Rot, Weiss und Grau verwendet wurden, um mit diesen Farben drei unterschiedliche Versionen zu kreieren.'
         darken
-        img={insta2}
+        image={insta2}
       />
       <WorkImage
         title='Bild als Hintergrund'
         description='Die Aufgabe war es, einmal die Guidelines zu erstellen, mit einem Bild als Hintergrund und das Gleiche mit Grafik als Hintergrund. In diesem Beispiel war es wichtig, wie das Design aussieht, mit einem Bild als Hintergrund. Jedes Bild ist eine andere Version, da ich überall mit unterschiedlichen Typo-Varianten gespielt habe. Folglich habe ich mich mit meiner Praxisbildnerin zusammengesetzt, um uns für eine Route zu entscheiden, welche ich dann ausarbeitete.'
-        img={insta3}
+        image={insta3}
       />
       <p>Finale Version</p>
       <div className='p-1.5'>
