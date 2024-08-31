@@ -11,7 +11,7 @@ const NavBar = () => {
           { text: "SWIMLANE", href: "/work/swimlane" },
           { text: "BEFRAGUNGSTOOL", href: "/work/befragungstool" },
           { text: "MASCOT", href: "/work/mascot" },
-        ]} href="/work" text="WORK" />
+        ]} text="WORK" />
         <NavButton href="/about" text="ABOUT" />
         <div></div>
       </div>

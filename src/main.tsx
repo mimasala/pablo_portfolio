@@ -9,6 +9,7 @@ import {
 import About from './pages/About.tsx';
 import InstagramStory from './pages/work/InstagramStory.tsx';
 import Swimlane from './pages/work/Swimlane.tsx';
+import Befragungstool from './pages/work/Befragungstool.tsx';
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/work/swimlane",
     element: <Swimlane />
+  },
+  {
+    path: "/work/befragungstool",
+    element: <Befragungstool />
   },
 ]);
 

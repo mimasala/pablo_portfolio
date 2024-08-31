@@ -10,10 +10,10 @@ import mascot from '../public/work/mascot.png'
 function App() {
 
   const workCards: workCardProps[] = [
-    { title: "INSTAGRAM STORY", img: insta },
-    { title: "SWIMLANE", img: swimlane },
-    { title: "BEFRAGUNGS- TOOL", img: befragungstool, darken: false },
-    { title: "MASCOT", img: mascot },
+    { title: "INSTAGRAM STORY", img: insta, href: "/work/instagram-story" },
+    { title: "SWIMLANE", img: swimlane, href: "/work/swimlane" },
+    { title: "BEFRAGUNGS- TOOL", img: befragungstool, darken: true, href: "/work/befragungstool" },
+    { title: "MASCOT", img: mascot, href: "/work/mascot" },
   ]
 
   return (
@@ -28,7 +28,7 @@ function App() {
       <div className='flex space-x-5 scroll-mr-96 overflow-x-scroll my-8 no-scrollbar'>
         <div className='xl:ml-[30vw]'></div>
         {workCards.map(card => {
-          return (<WorkCard title={card.title} img={card.img} darken={card.darken}></WorkCard>)
+          return (<WorkCard title={card.title} img={card.img} darken={card.darken} href={card.href}></WorkCard>)
         })}
       </div>
     </div>

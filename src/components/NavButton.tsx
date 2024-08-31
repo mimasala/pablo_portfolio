@@ -1,10 +1,10 @@
 import { useState, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { usePopper } from 'react-popper';
 import { cn } from '../utils';
 
 type NavButtonProps = {
-  href: string;
+  href?: string | undefined;
   text: string;
   subLinks?: subLink[] | undefined;
 };
@@ -17,6 +17,7 @@ type subLink = {
 const NavButton: React.FC<NavButtonProps> = ({ href, text, subLinks }) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const location = useLocation();
+  const navigate = useNavigate()
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
   const buttonRef = useRef<HTMLDivElement | null>(null);
   const { styles, attributes } = usePopper(buttonRef.current, popperElement, {
@@ -39,13 +40,14 @@ const NavButton: React.FC<NavButtonProps> = ({ href, text, subLinks }) => {
 
   return (
     <div
-      className='h-min relative'
+      className={cn("h-min relative", href ? "cursor-pointer" : "cursor-default")}
       ref={buttonRef}
       onMouseEnter={() => handleMouseEvents(true)}
       onMouseLeave={() => handleMouseEvents(false)}
       aria-label="Navigation button"
+
       role="link"
-      onClick={() => { window.location.href = href }}
+      onClick={() => { href ? navigate(href) : null }}
     >
       <div className={cn(isActive() ? "underline" : "", isHovered ? "font-bold" : "")}>
         {text}
