@@ -15,7 +15,9 @@ import usePageState from './globalStates.ts';
 import { cn } from './utils.ts';
 
 function App() {
+  //@ts-ignore
   const { isPageLoaded, setPageLoaded } = usePageState();
+  //@ts-ignore
   const [fadeOut, setFadeOut] = useState(false);
 
   const router = createBrowserRouter([
