@@ -8,17 +8,8 @@ import InstagramStory from './pages/work/InstagramStory.tsx';
 import Swimlane from './pages/work/Swimlane.tsx';
 import Befragungstool from './pages/work/Befragungstool.tsx';
 import Index from './pages/Index';
-import { useEffect, useState } from 'react';
-import PageIsLoading from './pages/feedback/PageIsLoading.tsx';
-import { motion } from 'framer-motion';
-import usePageState from './globalStates.ts';
-import { cn } from './utils.ts';
 
 function App() {
-  //@ts-ignore
-  const { isPageLoaded, setPageLoaded } = usePageState();
-  //@ts-ignore
-  const [fadeOut, setFadeOut] = useState(false);
 
   const router = createBrowserRouter([
     {
@@ -43,34 +34,9 @@ function App() {
     },
   ]);
 
-  // const onPageLoad = () => {
-  //   setFadeOut(true);
-  //   setTimeout(() => {
-  //     setPageLoaded(true);
-  //     console.log(Array.from(document.images));
-  //   }, 500);
-  // };
-
-  useEffect(() => {
-    const images = Array.from(document.images)
-    console.log(images.map(x => x.complete));
-  }, [])
-
   return (
     <>
-      {!isPageLoaded && (
-        <motion.div
-          initial={{ opacity: 1 }}
-          animate={{ opacity: fadeOut ? 0 : 1 }}
-          transition={{ duration: 0.5 }}
-          className="absolute inset-0 flex items-center justify-center bg-white"
-        >
-          <PageIsLoading />
-        </motion.div>
-      )}
-      <div className={cn(isPageLoaded ? "" : "hidden")}>
-        <RouterProvider router={router} />
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }
