@@ -26,8 +26,6 @@ const Hero = () => {
           initial="initial"
           animate="initial"
           whileHover="animate"
-          whileTap="animate"
-          whileDrag="animate"
         >
           <motion.div
             className='flex justify-center'
