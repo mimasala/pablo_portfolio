@@ -58,7 +58,7 @@ const NavButton: React.FC<NavButtonProps> = ({ href, text, subLinks }) => {
           ref={setPopperElement}
           style={styles.popper}
           {...attributes.popper}
-          className="bg-white border shadow-lg"
+          className="bg-white  shadow-lg"
         >
           <div className='w-48 p-1'>
             {subLinks.map((subLink, index) => (

@@ -8,8 +8,10 @@ import InstagramStory from './pages/work/InstagramStory.tsx';
 import Swimlane from './pages/work/Swimlane.tsx';
 import Befragungstool from './pages/work/Befragungstool.tsx';
 import Index from './pages/Index';
+import { useTitle } from 'react-use';
 
 function App() {
+  useTitle("Pablo Thuerig")
 
   const router = createBrowserRouter([
     {
